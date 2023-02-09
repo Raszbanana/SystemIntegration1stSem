@@ -1,8 +1,8 @@
 # PARSING FILES WITH PYTHON
 #
 # PARSE TXT FILE
-with open("../data/me.txt", "r") as f:
-    stringOftest = f.read()
+with open("../data/me.txt") as file:
+    stringOftest = file.read()
 
     name, age, hobbies = stringOftest.strip().split("\n")
 
@@ -16,8 +16,8 @@ with open("../data/me.txt", "r") as f:
 
 # PARSE JSON FILE
 import json
-with open("../data/me.json", "r") as f:
-    jsontest = json.load(f)
+with open("../data/me.json") as file:
+    jsontest = json.load(file)
 
     meObject = jsontest
 
@@ -25,8 +25,8 @@ with open("../data/me.json", "r") as f:
 
 # PARSE CSV FILE
 import csv
-with open("../data/me.csv", "r") as f:
-    reader = csv.DictReader(f)
+with open("../data/me.csv") as file:
+    reader = csv.DictReader(file)
 
     meObject = [
         {
@@ -41,20 +41,20 @@ with open("../data/me.csv", "r") as f:
 
 # PARSE XML FILE
 import xml.etree.ElementTree as ET
-with open("../data/me.xml", "r") as file:
-    xml_root = ET.fromstring(file.read())
+with open("../data/me.xml") as file:
+    rootElement = ET.fromstring(file.read())
 
 me = {
-"name": xml_root.find("name").text,
-"age": xml_root.find("age").text,
-"hobbies": [hobby.text for hobby in xml_root.find("hobbies")],
+"name": rootElement.find("name").text,
+"age": rootElement.find("age").text,
+"hobbies": [hobby.text for hobby in rootElement.find("hobbies")],
 }
 
 print("meObject by xml", me)
 
 # PARSE YAML FILE
 import yaml
-with open("../data/me.yaml", "r") as f:
-    meObject = yaml.load(f, Loader=yaml.FullLoader)
+with open("../data/me.yaml") as file:
+    meObject = yaml.load(file, Loader=yaml.FullLoader)
 
     print("meObject by yaml:", meObject)
