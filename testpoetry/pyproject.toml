@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "testpoetry"
+version = "0.0.1"
+description = ""
+authors = ["Raszbanana <niko.hochloff@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+emoji = "^2.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
