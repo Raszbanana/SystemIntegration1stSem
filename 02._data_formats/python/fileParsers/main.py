@@ -1,7 +1,10 @@
 # PARSING FILES WITH PYTHON
 #
+import json
+import csv
+
 # PARSE TXT FILE
-with open("../data/me.txt") as file:
+with open("../../data/me.txt") as file:
     stringOftest = file.read()
 
     name, age, hobbies = stringOftest.strip().split("\n")
@@ -14,9 +17,9 @@ with open("../data/me.txt") as file:
 
     print("meObject by txt:", meObject)
 
+
 # PARSE JSON FILE
-import json
-with open("../data/me.json") as file:
+with open("../../data/me.json") as file:
     jsontest = json.load(file)
 
     meObject = jsontest
@@ -24,8 +27,7 @@ with open("../data/me.json") as file:
     print("meObject by json:", meObject)
 
 # PARSE CSV FILE
-import csv
-with open("../data/me.csv") as file:
+with open("../../data/me.csv") as file:
     reader = csv.DictReader(file)
 
     meObject = [
@@ -41,7 +43,7 @@ with open("../data/me.csv") as file:
 
 # PARSE XML FILE
 import xml.etree.ElementTree as ET
-with open("../data/me.xml") as file:
+with open("../../data/me.xml") as file:
     rootElement = ET.fromstring(file.read())
 
 me = {
@@ -54,7 +56,7 @@ print("meObject by xml", me)
 
 # PARSE YAML FILE
 import yaml
-with open("../data/me.yaml") as file:
+with open("../../data/me.yaml") as file:
     meObject = yaml.load(file, Loader=yaml.FullLoader)
 
     print("meObject by yaml:", meObject)

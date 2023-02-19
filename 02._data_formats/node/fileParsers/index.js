@@ -2,8 +2,18 @@
 //
 import * as fs from 'fs';
 
+// CSV PARSER
+import Papa from 'papaparse';
+
+// XML PARSER
+import xml2js from 'xml2js';
+
+// YAML PARSER
+import * as jsYaml from 'js-yaml';
+
+
 // PARSE TXT FILE
-fs.readFile('../data/me.txt', 'utf-8', (err, data) => {
+fs.readFile('../../data/me.txt', 'utf-8', (err, data) => {
   if (err) throw err;
 
   const stringOftest = data;
@@ -20,7 +30,7 @@ fs.readFile('../data/me.txt', 'utf-8', (err, data) => {
 });
 
 // PARSE JSON FILE
-fs.readFile('../data/me.json', 'utf-8', (err, data) => {
+fs.readFile('../../data/me.json', 'utf-8', (err, data) => {
   if (err) throw err;
 
   const jsontest = JSON.parse(data);
@@ -32,9 +42,7 @@ fs.readFile('../data/me.json', 'utf-8', (err, data) => {
 });
 
 // PARSE CSV
-import Papa from 'papaparse';
-
-fs.readFile('../data/me.csv', 'utf-8', (err, data) => {
+fs.readFile('../../data/me.csv', 'utf-8', (err, data) => {
   if (err) throw err;
 
   const results = Papa.parse(data, {
@@ -50,9 +58,7 @@ fs.readFile('../data/me.csv', 'utf-8', (err, data) => {
 });
 
 // PARSE XML
-import xml2js from 'xml2js';
-
-fs.readFile('../data/me.xml', 'utf-8', (err, data) => {
+fs.readFile('../../data/me.xml', 'utf-8', (err, data) => {
   if (err) throw err;
 
   xml2js.parseString(data, (err, result) => {
@@ -69,9 +75,7 @@ fs.readFile('../data/me.xml', 'utf-8', (err, data) => {
 });
 
 // PARSE YAML
-import * as jsYaml from 'js-yaml';
-
-fs.readFile('../data/me.yaml', 'utf-8', (err, data) => {
+fs.readFile('../../data/me.yaml', 'utf-8', (err, data) => {
   if (err) throw err;
 
   const meObject = jsYaml.load(data);
