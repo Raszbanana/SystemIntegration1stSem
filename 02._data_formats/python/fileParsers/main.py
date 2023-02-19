@@ -2,6 +2,8 @@
 #
 import json
 import csv
+import xml.etree.ElementTree as ET
+import yaml
 
 # PARSE TXT FILE
 with open("../../data/me.txt") as file:
@@ -42,7 +44,6 @@ with open("../../data/me.csv") as file:
     print("meObject by csv:", meObject)
 
 # PARSE XML FILE
-import xml.etree.ElementTree as ET
 with open("../../data/me.xml") as file:
     rootElement = ET.fromstring(file.read())
 
@@ -55,7 +56,6 @@ me = {
 print("meObject by xml", me)
 
 # PARSE YAML FILE
-import yaml
 with open("../../data/me.yaml") as file:
     meObject = yaml.load(file, Loader=yaml.FullLoader)
 

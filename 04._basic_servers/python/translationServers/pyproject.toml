@@ -1,14 +1,16 @@
 [tool.poetry]
-name = "python"
+name = "translationservers"
 version = "0.1.0"
 description = ""
-authors = ["Raszbanana <niko.hochloff@gmail.com>"]
+authors = ["Raszbanana <75260673+Raszbanana@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
+xmltodict = "^0.13.0"
+pyyaml = "^6.0"
+fastapi = "^0.92.0"
 uvicorn = "^0.20.0"
-fastapi = "^0.91.0"
 
 
 [build-system]

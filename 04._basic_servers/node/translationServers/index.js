@@ -1,5 +1,4 @@
 import express from 'express';
-import * as fs from 'fs';
 import Papa from 'papaparse';
 import xml2js from 'xml2js';
 import * as jsYaml from 'js-yaml';
