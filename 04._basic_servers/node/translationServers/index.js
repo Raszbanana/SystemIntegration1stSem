@@ -7,7 +7,10 @@ const app = express();
 
 // TXT FILES
 app.post('/send/txt', (req, res, next) => {
-  if (!req.headers['content-type'] || !req.headers['content-type'].startsWith('text/plain')) {
+  if (
+    !req.headers['content-type'] ||
+    !req.headers['content-type'].startsWith('text/plain')
+  ) {
     const error = new Error('Invalid content type');
     error.statusCode = 400;
     return next(error);
@@ -29,7 +32,10 @@ app.post('/send/txt', (req, res, next) => {
 
 // CSV FILES
 app.post('/send/csv', (req, res, next) => {
-  if (!req.headers['content-type'] || !req.headers['content-type'].startsWith('text/csv')) {
+  if (
+    !req.headers['content-type'] ||
+    !req.headers['content-type'].startsWith('text/csv')
+  ) {
     const error = new Error('Invalid content type');
     error.statusCode = 400;
     return next(error);
@@ -58,7 +64,10 @@ app.post('/send/csv', (req, res, next) => {
 
 // JSON FILES
 app.post('/send/json', (req, res, next) => {
-  if (!req.headers['content-type'] || !req.headers['content-type'].startsWith('application/json')) {
+  if (
+    !req.headers['content-type'] ||
+    !req.headers['content-type'].startsWith('application/json')
+  ) {
     const error = new Error('Invalid content type');
     error.statusCode = 400;
     return next(error);
@@ -82,7 +91,10 @@ app.post('/send/json', (req, res, next) => {
 
 // YAML FILES
 app.post('/send/yaml', (req, res, next) => {
-  if (!req.headers['content-type'] || !req.headers['content-type'].startsWith('text/yaml')) {
+  if (
+    !req.headers['content-type'] ||
+    !req.headers['content-type'].startsWith('text/yaml')
+  ) {
     const error = new Error('Invalid content type');
     error.statusCode = 400;
     return next(error);
@@ -107,12 +119,11 @@ app.post('/send/yaml', (req, res, next) => {
     next(err);
   });
 });
-  
+
 // XML FILES
 app.post('/send/xml', (req, res, next) => {
-
   // Gets error with postman even when it is a valid XML file? investigate
-  // 
+  //
   // if (!req.headers['content-type'] || !req.headers['content-type'].startsWith('text/xml')) {
   //   const error = new Error('Invalid content type');
   //   error.statusCode = 400;
@@ -140,7 +151,6 @@ app.post('/send/xml', (req, res, next) => {
     next(err);
   });
 });
-
 
 app.listen(3000, () => {
   console.log('Example app listening on port 3000!');
