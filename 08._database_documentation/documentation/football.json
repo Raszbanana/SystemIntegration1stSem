@@ -1,0 +1,23 @@
+{
+    "schema": [
+        {
+            "table": "players",
+            "columns": [
+                {
+                    "field": "id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "PRI",
+                    "extra": "auto_increment",
+                    "typeJS": "Number"
+                },
+                {
+                    "field": "name",
+                    "type": "varchar(70)",
+                    "null": "YES",
+                    "typeJS": "String"
+                }
+            ]
+        }
+    ]
+}
