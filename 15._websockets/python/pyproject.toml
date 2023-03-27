@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "15-websockets"
+version = "0.1.0"
+description = ""
+authors = ["Raszbanana <niko.hochloff@gmail.com>"]
+readme = "README.md"
+packages = [{include = "15"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.95.0"
+uvicorn = "^0.21.1"
+websockets = "^10.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
